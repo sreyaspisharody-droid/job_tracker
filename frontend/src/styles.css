@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #292a27;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #292a27;
+  --muted: #85857d;
+  --green: #32695c;
+  --line: #e8e5dc;
+  --paper: #fffefa;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.page-shell { width: min(1080px, calc(100% - 64px)); margin: 0 auto; }
+.brand { color: var(--ink); display: inline-flex; align-items: center; gap: 9px; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: -.4px; }
+.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; background: #d8e9d8; color: var(--green); border-radius: 50% 50% 50% 12px; font-family: "Playfair Display", serif; font-size: 16px; }
+.sign-in { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 42px 0 25px; }
+.sign-in > .brand { align-self: flex-start; }
+.welcome-card { width: min(460px, 100%); padding: 43px 48px 24px; margin: auto 0 20px; background: var(--paper); border: 1px solid #eeece5; border-radius: 8px; box-shadow: 0 12px 50px #393a2510; }
+.eyebrow, label { font-family: "DM Mono", monospace; font-size: 10px; font-weight: 500; letter-spacing: 1.05px; color: var(--muted); }
+.eyebrow { display: flex; align-items: center; gap: 8px; }
+.tiny-dot, .status-dot { width: 7px; height: 7px; display: inline-block; background: #72a58a; border-radius: 50%; }
+h1 { font-size: clamp(38px, 5vw, 47px); line-height: 1.12; letter-spacing: -2.2px; margin: 17px 0 12px; font-weight: 600; }
+h1 em { color: var(--green); font-family: "Playfair Display", serif; font-weight: 600; }
+.intro { color: #77776f; font-size: 14px; line-height: 1.65; margin: 0; }
+form { display: flex; flex-direction: column; }
+.welcome-card form { margin-top: 27px; }
+form label { margin: 0 0 7px; }
+input { width: 100%; min-height: 44px; border: 1px solid #e4e1d8; border-radius: 4px; background: #fff; padding: 0 12px; font-size: 13px; color: var(--ink); outline: none; }
+input:focus, select:focus { border-color: #79a595; box-shadow: 0 0 0 3px #d8e9d85c; }
+input::placeholder { color: #b0aea5; }
+form input + label { margin-top: 17px; }
+.primary-button { margin-top: 19px; min-height: 46px; border: 0; border-radius: 4px; background: var(--green); color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; font-size: 13px; font-weight: 600; transition: background .15s, transform .15s; }
+.primary-button:hover:not(:disabled) { background: #28594e; transform: translateY(-1px); }
+.primary-button:disabled { opacity: .65; cursor: wait; }
+.primary-button span { font-size: 17px; }
+.text-button { border: 0; padding: 9px 0 0; align-self: center; background: transparent; color: var(--green); font-size: 12px; }
+.text-button:hover { text-decoration: underline; }
+.card-foot, .footer-note { margin-top: 26px; padding-top: 15px; border-top: 1px solid var(--line); font-family: "DM Mono", monospace; color: #aaa99f; font-size: 9px; letter-spacing: .65px; display: flex; justify-content: space-between; }
+.card-foot span, .footer-note span { color: #8eb39b; font-size: 13px; }
+.sign-in-note { margin: 0 auto; color: #8c8a82; font-size: 12px; }
+.error { color: #a2453e; background: #fff1ee; border-radius: 4px; padding: 9px 10px; margin: 14px 0 0; font-size: 12px; line-height: 1.5; }
+
+.tracker { min-height: 100vh; padding: 28px 0 22px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.account { display: flex; align-items: center; gap: 18px; }
+.account-phone { color: #77776f; font-size: 12px; }
+.sign-out { padding: 0; align-self: auto; }
+.tracker-heading { display: flex; justify-content: space-between; align-items: end; padding: 46px 0 32px; }
+.tracker-heading h1 { font-size: clamp(38px, 5vw, 50px); margin-bottom: 10px; }
+.count-note { display: flex; align-items: center; gap: 12px; padding-bottom: 5px; }
+.count-note strong { color: var(--green); font-family: "Playfair Display", serif; font-size: 43px; font-weight: 600; }
+.count-note span { color: var(--muted); font-size: 11px; line-height: 1.45; }
+.workspace { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+.add-card { background: #eeefe5; border-radius: 6px; padding: 22px 20px 20px; }
+.add-card .eyebrow { margin-bottom: 22px; color: #72756d; }
+.add-card input { min-height: 41px; }
+.add-card form label + input { margin-bottom: 15px; }
+.add-card label:not(:first-child) { margin-top: 14px; }
+.add-card .primary-button { width: 100%; margin-top: 7px; }
+.applications { min-width: 0; }
+.list-heading { display: flex; justify-content: space-between; align-items: center; padding: 4px 0 14px; border-bottom: 1px solid var(--line); }
+.list-heading h2 { margin: 0; font-family: "Playfair Display", serif; font-weight: 600; font-size: 21px; letter-spacing: -.5px; }
+.list-heading h2 span { margin-left: 4px; vertical-align: 2px; color: #9b998f; font-family: "DM Mono", monospace; font-size: 11px; }
+.list-caption { color: #aaa99f; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .7px; }
+.empty-state { min-height: 245px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.empty-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; background: #e7eee3; color: var(--green); font-size: 21px; }
+.empty-state h3 { margin: 15px 0 5px; font-family: "Playfair Display", serif; font-size: 18px; font-weight: 600; }
+.empty-state p { margin: 0; font-size: 12px; color: var(--muted); }
+.job-row { min-height: 79px; display: flex; align-items: center; gap: 13px; border-bottom: 1px solid var(--line); }
+.job-monogram { flex: 0 0 38px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50% 50% 50% 10px; background: #e9e5d9; color: #786f5a; font-family: "Playfair Display", serif; font-size: 16px; }
+.job-details { min-width: 0; flex: 1; }
+.job-details h3 { margin: 0 0 4px; font-size: 13px; font-weight: 600; }
+.job-details p { margin: 0; color: #89877e; font-size: 11px; }
+.job-details p span { padding: 0 3px; }
+.status { padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; border-radius: 20px; background: #e9eee5; color: #55765a; }
+.status-dot { width: 6px; height: 6px; background: currentColor; }
+.status select { max-width: 94px; border: none; outline: none; background: transparent; color: inherit; cursor: pointer; font-size: 10px; appearance: none; }
+.status-interview { background: #f4eddb; color: #927238; }
+.status-offer { background: #deeee4; color: #367253; }
+.status-rejected { background: #f4e5e1; color: #a45e52; }
+.footer-note { margin-top: 38px; padding-top: 13px; }
+.mobile-break { display: none; }
+
+@media (max-width: 700px) {
+  .page-shell { width: min(100% - 36px, 520px); }
+  .sign-in { padding-top: 26px; }
+  .welcome-card { padding: 32px 25px 20px; }
+  h1 { font-size: 39px; }
+  .tracker { padding-top: 19px; }
+  .tracker-heading { padding: 32px 0 25px; }
+  .tracker-heading h1 { font-size: 38px; letter-spacing: -1.7px; }
+  .tracker-heading .intro { max-width: 245px; }
+  .count-note { gap: 7px; }
+  .count-note strong { font-size: 34px; }
+  .count-note span { font-size: 9px; }
+  .workspace { grid-template-columns: 1fr; gap: 34px; }
+  .add-card { padding: 19px; }
+  .footer-note { margin-top: 30px; }
+}
+
+@media (max-width: 420px) {
+  .account { gap: 10px; }
+  .account-phone { font-size: 10px; }
+  .mobile-break { display: initial; }
+  .tracker-heading h1 { font-size: 34px; }
+  .tracker-heading .intro { font-size: 12px; }
+  .count-note strong { font-size: 29px; }
+  .count-note span { display: none; }
+  .job-row { gap: 9px; }
+  .job-monogram { flex-basis: 32px; width: 32px; height: 32px; }
+  .status { padding: 6px; }
+}
